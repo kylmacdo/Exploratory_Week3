@@ -26,9 +26,11 @@ plot3<- function(){
                                                           sum)
         
         
-        png(filename="Plot3.png")
-        plot(NEI.data$year,NEI.data$emission,type="l",xlab="Year",ylab="Total PM2.5 emissions per year")
-        lines(lowess(NEI.data$year,NEI.data$emission,f=2))
+        #png(filename="Plot3.png")
+        plot <- ggplot(NEI.data,aes(year,emission)) + geom_point(shape=1, size=1) + facet_grid(. ~ type) + theme_bw(base_family = "Avenir", base_size = 2.5)
+        ggsave(plot,filename="Plot3.png",width=3,height=2)
+        
+        #plot
 
-        dev.off()
+        #dev.off()
 }
