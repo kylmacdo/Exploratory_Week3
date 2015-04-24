@@ -38,7 +38,7 @@ plot6<- function(){
                                                             sum)
        
         
-        plot <- ggplot(NEI.data,aes(year,emission)) + geom_point(shape=1, size=1) + facet_grid(. ~ fips) + theme_bw(base_family = "Avenir", base_size = 2.5)
+        plot <- ggplot(NEI.data,aes(year,emission)) + geom_point(shape=1, size=1) + facet_grid(. ~ fips) + theme_bw(base_size = 3)
         ggsave(plot,filename="Plot6.png",width=3,height=2)
         
         
